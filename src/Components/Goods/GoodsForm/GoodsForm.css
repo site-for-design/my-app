@@ -1,0 +1,13 @@
+.goods-form {
+    /* background-color: rgb(57, 200, 216); */
+}
+.goods-form input {
+    border: 2px solid rgb(0, 0, 0);
+    height: 20px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(110, 236, 110);
+}

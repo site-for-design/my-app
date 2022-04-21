@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App/App';
+// import App from './App/App';
 import Goods from './Components/Goods/Goods';
-import GoodsList from './Components/Goods/GoodsList';
+import Counter from './Components/Goods/counter';
+// import GoodsList from './Components/Goods/GoodsList';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       <>
             <Goods />
-            <GoodsList />
-            <App />
+            <Counter />
+            {/* <GoodsList /> */}
+            {/* <App /> */}
       </>
 );
 

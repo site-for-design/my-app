@@ -1,23 +1,58 @@
+import React, { useState } from 'react';
+
 import './goods.css';
-import GoodsList from './GoodsList';
+import GoodsForm from './GoodsForm/GoodsForm';
+import GoodsList from './GoodsList/GoodsList';
+import GoodsBtn from './GoodsBtn';
 
 function Goods() {
-    return (
-      <div className="goods-wrap">
-        <GoodsList />
-        <div className="btn" onClick={() => {
 
-          let newProduct = {
-            name: prompt('Название товара'),
-            price: prompt('Цена'),
-            currency: prompt('Валюта')
-          }
+  const [goodsList, setGoodsList] = useState([
+    {
+      name: 'IPhone X',
+      price: '200',
+      currency: '$'
+    },
+    {
+      name: 'Samsung Galaxy S7',
+      price: '120',
+      currency: 'рос. р'
+    },
+    {
+      name: 'Nokia 3310',
+      price: '2400',
+      currency: '$'
+    }
+  ]);
 
-          let newProductHtml = `<li><p>Название товара: ${newProduct.name}</p><p>Цена: ${newProduct.price + newProduct.currency}</p></li>`;
-          document.querySelector('.goods-wrap ul').innerHTML += newProductHtml;
-          
-        }}>Добавить товар</div>
-        </div>
-    );
+
+  const addNewGoodItem = (name, price, currency) => {
+    // setGoodsList(() => {
+    //   goodsList.push(
+    //     {
+    //       name: name,
+    //       price: price,
+    //       currency: currency
+    //     }
+    //   );
+    // });
+    setGoodsList((prevState) => [
+      ...prevState,
+      {
+        name: name,
+        price: price,
+        currency: currency
+      }
+    ]);
+    console.log(goodsList);
+  }
+
+  return (
+    <div className="goods-wrap">
+      <GoodsForm addNewGoodItem={addNewGoodItem} />
+      <GoodsList goodsList={goodsList} />
+      <GoodsBtn />
+    </div>
+  );
 }
 export default Goods;

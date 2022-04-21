@@ -1,7 +1,8 @@
-const GoodItem = (props) =>
-  <li>
+const GoodsItem = (props) =>
+
+
+  <li key={props.id}>
     <p>Название товара: {props.name}</p>
-    <p>Цвет: {props.color}</p>
     <p>Цена: {props.price + props.currency}</p>
   </li>;
-export default GoodItem;
+export default GoodsItem;
