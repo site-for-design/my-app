@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Прямоугольник_217" data-name="Прямоугольник 217" width="16" height="16" transform="translate(0 0.439)" fill="#2e2e2e"/>
+    </clipPath>
+  </defs>
+  <g id="закрыть" transform="translate(0 -0.439)" clip-path="url(#clip-path)">
+    <path id="х" d="M18.75,8.75h-7.5V1.25a1.25,1.25,0,0,0-2.5,0v7.5H1.25a1.25,1.25,0,0,0,0,2.5h7.5v7.5a1.25,1.25,0,0,0,2.5,0v-7.5h7.5a1.25,1.25,0,0,0,0-2.5Z" transform="translate(8.168 -6.024) rotate(45)" fill="#2e2e2e"/>
+  </g>
+</svg>

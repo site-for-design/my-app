@@ -1,0 +1,35 @@
+.goodsWrap {
+    display: flex;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.loading {
+    display: flex;
+    align-items: center;
+}
+.loading:after {
+    content: '';
+    margin-left: 5px;
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px dashed #000;
+    animation: loading 2s infinite;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ul {
+    width: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
