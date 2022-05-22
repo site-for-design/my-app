@@ -1,7 +1,13 @@
-!isFormValid && 
-                _ReactDOM.createPortal(
-                    <>
-                        <Popup isFormValid={s} popupTitle='Title' popupMessage='message' />
-                        <div className="overlay"></div>
-                    </>
-                    , document.querySelector('body'))
+import Popup from '../../Components/Popup/Popup';
+import * as _ReactDOM  from 'react-dom';
+
+const portalPopup = (popupClose, popupTitle, popupMessage) => {
+        return _ReactDOM.createPortal(
+            <>
+                <Popup popupClose={popupClose} popupTitle={popupTitle} popupMessage={popupMessage} />
+                <div className="overlay"></div>
+            </>
+        , document.querySelector('body'))
+}
+
+export default portalPopup;

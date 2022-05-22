@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DataBase from '../../Services/DataBase';
 
 let initialRender = false;
+const db = DataBase();
 
 const useGoodsList = () => {
 
@@ -10,19 +11,20 @@ const useGoodsList = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     // db function
-    const db = DataBase();
-    useEffect(() => {
-        db.getFromLocalStorage().then(
-        (state) => {
+    const updateGoodsList = () => {
+        setIsLoading(true);
+
+        db.getFromLocalStorage()
+        .then((state) => {
             setGoodsList(state);
-            
-            setIsLoading(false);
             initialRender = true;
-        },
-        () => {
+
+        }).catch(() => {
             setError('Data Base was not found!');
-        }
-        );
+        }).then(() => setIsLoading(false));
+    }
+    useEffect(() => {
+        updateGoodsList();
     }, []);
     
     useEffect(() => {
@@ -63,7 +65,7 @@ const useGoodsList = () => {
         });
     };
 
-    return { isLoading, error, setError, goodsList, createItem, editItem, removeItem };
+    return { isLoading, error, setError, goodsList, createItem, editItem, removeItem, updateGoodsList };
 }
 
 export default useGoodsList;

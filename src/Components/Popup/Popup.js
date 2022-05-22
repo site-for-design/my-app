@@ -5,10 +5,10 @@ const Popup = (props) => {
         <div className={styles.popupWrap}>
             <div className={styles.popup}>
                 <div className={styles.close} onClick={() => {
-                    props.isFormValid()
+                    props.popupClose()
                 }}>+</div>
-                <h5>{props.popupMessage.title}</h5>
-                <div className={styles.desc} dangerouslySetInnerHTML={{ __html: props.popupMessage.desc }} />
+                <h5>{props.popupTitle}</h5>
+                <div className={styles.desc} dangerouslySetInnerHTML={{ __html: props.popupMessage }} />
             </div>
         </div>
     );

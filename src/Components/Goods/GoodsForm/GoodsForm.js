@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import * as _ReactDOM  from 'react-dom';
 import './GoodsForm.css';
-import Popup from '../../Popup/Popup';
+import portalPopup from '../../../Components/Popup/PortalPopup';
 
 const GoodsForm = (props) => {
     // create
@@ -34,7 +33,6 @@ const GoodsForm = (props) => {
     };
     const getPriceValue = (e) => {
         setPrice(e.target.value);
-        console.log(e.target.value.trim().length);
         setPriceIsValid(() => {
             return e.target.value.trim().length > 0 && !isNaN(e.target.value);
         });
@@ -81,13 +79,7 @@ const GoodsForm = (props) => {
        <>
             {
                 !isFormValid && 
-                _ReactDOM.createPortal(
-                    <>
-                        <Popup isFormValid={checkFormValid} popupMessage={popupMessage} />
-                        <div className="overlay"></div>
-                    </>
-                    , document.querySelector('body'))
-                
+                portalPopup(checkFormValid, popupMessage.title, popupMessage.desc)
             }
             <form className='goods-form' onSubmit={submitForm}>
                 <div>

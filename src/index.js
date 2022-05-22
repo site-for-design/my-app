@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Goods from './Components/Goods/Goods';
-import Test from './Components/Test';
+
+import { Provider } from 'react-redux';
+import store from './Store/index';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
       <Goods />
-      <Test />
-  </React.StrictMode>
+  </Provider>
 );
 
+// store.subscribe(setRoot);
 // root.render(
 //       <>
 //             <div id='popup'></div>
